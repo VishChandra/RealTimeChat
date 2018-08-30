@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background: #e6e6e6;
 }
 
 /* Wrapping element */
@@ -8,6 +9,15 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+#messages {
+    padding-top:10px;
+    background: white;
+    position: relative;
+    height: 50vh;
+    max-height: 50vh;
+    overflow-y: auto;
 }
 
 .top-space {

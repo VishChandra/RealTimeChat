@@ -24,6 +24,7 @@ namespace RealTimeChat
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddWebSocketManager();
+            services.AddSingleton<ChatManager>();
             services.AddMvc();
         }
 
