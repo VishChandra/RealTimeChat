@@ -8,7 +8,7 @@
         <ul id="messages">
             @foreach (var item in ChatManager.Messages)
             {
-                <li>@item.UserId said: @item.Message</li>
+                <li><span class="fade">@item.UserId said: </span>@item.Message</li>
 
             }
         </ul>

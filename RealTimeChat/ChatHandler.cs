@@ -15,7 +15,8 @@ namespace RealTimeChat
             _chatManager = chatManager;
         }
         public async Task SendMessage(string socketId, string message)
-        {
+        
+{
             dynamic dynamicMessage = new ExpandoObject();
             dynamicMessage.UserId = socketId;
             dynamicMessage.Message = message;

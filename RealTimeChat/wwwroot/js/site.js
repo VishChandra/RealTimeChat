@@ -7,29 +7,30 @@ $(document).ready(function () {
 
     connection.connectionMethods.onConnected = () => {
 
-    }
+    };
 
     connection.connectionMethods.onDisconnected = () => {
 
-    }
+    };
 
+    var $name = prompt("Enter your name");
     connection.clientMethods["pingMessage"] = (socketId, message) => {
         var messageText = socketId + ' said: ' + message;
         $('#messages').append('<li>' + messageText + '</li>');
         $('#messages').scrollTop($('#messages').prop('scrollHeight'));
         console.log(messageText);
-    }
+    };
 
     connection.start();
 
     var $messagecontent = $('#message-content');
     $messagecontent.keyup(function (e) {
-        if (e.keyCode == 13) {
+        if (e.keyCode === 13) {
             var message = $messagecontent.val().trim();
-            if (message.length == 0) {
+            if (message.length === 0) {
                 return false;
             }
-            connection.invoke("SendMessage", connection.connectionId, message);
+            connection.invoke("SendMessage", $name, message);
             $messagecontent.val('');
         }
     });
